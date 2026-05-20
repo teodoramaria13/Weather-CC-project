@@ -2,7 +2,7 @@ name: Deploy to Cloud Run
 
 env:
   SERVICE_NAME: weather-cc-project
-  PROJECT_ID: cc-project-490314        #ID din CGP
+  PROJECT_ID: cc-project-490314
   DOCKER_IMAGE_URL: europe-west4-docker.pkg.dev/cc-project-490314/cloud-run-source-deploy/weather-cc-project
 
 on:
