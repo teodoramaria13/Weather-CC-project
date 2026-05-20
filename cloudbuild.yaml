@@ -5,7 +5,7 @@ steps:
       [
         "build",
         "-t",
-        "us-central1-docker.pkg.dev/cc-2024-2025-453119/cloud-run-source-deploy/proiectcc:$COMMIT_SHA",
+        "europe-west4-docker.pkg.dev/cc-project-490314/cloud-run-source-deploy/weather-cc-project:$COMMIT_SHA",
         ".",
       ]
   # Push the image to Artifact Registry
@@ -13,7 +13,7 @@ steps:
     args:
       [
         "push",
-        "us-central1-docker.pkg.dev/cc-2024-2025-453119/cloud-run-source-deploy/proiectcc:$COMMIT_SHA",
+        "europe-west4-docker.pkg.dev/cc-project-490314/cloud-run-source-deploy/weather-cc-project:$COMMIT_SHA",
       ]
   # Deploy image to Cloud Run
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
@@ -21,10 +21,10 @@ steps:
     args:
       - "run"
       - "deploy"
-      - "proiectcc"
+      - "weather-cc-project"
       - "--image"
-      - "us-central1-docker.pkg.dev/cc-2024-2025-453119/cloud-run-source-deploy/proiectcc:$COMMIT_SHA"
+      - "europe-west4-docker.pkg.dev/cc-project-490314/cloud-run-source-deploy/weather-cc-project:$COMMIT_SHA""
       - "--region"
-      - "us-central1"
+      - "europe-west4"
 images:
-  - "us-central1-docker.pkg.dev/cc-2024-2025-453119/cloud-run-source-deploy/proiectcc:$COMMIT_SHA"
+  - "europe-west4-docker.pkg.dev/cc-project-490314/cloud-run-source-deploy/weather-cc-project:$COMMIT_SHA"
